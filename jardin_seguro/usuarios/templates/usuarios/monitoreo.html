@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Cámara</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar una Nueva Cámara</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.nombre.label_tag }} {{ form.nombre }}
+            {{ form.ubicacion.label_tag }} {{ form.ubicacion }}
+            
+            {{ form.hora_inicio.label_tag }}
+            {{ form.hora_inicio.as_widget }}
+            
+            {{ form.hora_fin.label_tag }}
+            {{ form.hora_fin.as_widget }}
+            
+            <button type="submit">Agregar Cámara</button>
+        </form>
+        <br>
+        <div>
+            <a href="{% url 'inicio' %}"><button>Volver al Inicio</button></a>
+        </div>
+    </div>
+</body>
+</html>

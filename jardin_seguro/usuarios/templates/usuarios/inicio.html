@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <script src="{% static 'js/scripts.js' %}" defer></script>
+</head>
+<body>
+    <div class="inicio-container">
+        <h1>Bienvenido al Sistema</h1>
+        <p>Elige una de las opciones para gestionar las cámaras de seguridad.</p>
+
+        <div class="button-group">
+            <a href="{% url 'ver_camaras' %}">
+                <button class="btn-action">Ver Cámaras</button>
+            </a>
+            <a href="{% url 'monitoreo' %}">
+                <button class="btn-action btn-secondary">Agregar Cámara</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
